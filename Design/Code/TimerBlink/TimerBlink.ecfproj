@@ -1,0 +1,6 @@
+ProjectName=TimerBlink
+ReadSpace=false
+WriteSpace=false
+InstructionSpace=false
+ProgramCounterSize=13
+BusWidth=8

@@ -1,0 +1,199 @@
+{
+  "project_settings": {
+    "ProjectName": "HelloWorld",
+    "SourceDir": "src",
+    "BuildDir": "build",
+    "Output": "output.bin",
+    "Target": "FPGA",
+    "Version": "1.0"
+  },
+  "write_addresses_count": 114,
+  "read_addresses_count": 68,
+  "instructions_count": 22,
+  "write_addresses": {
+    "1": {
+      "address": 1,
+      "name": "RST",
+      "description": "Reset ALU"
+    },
+    "2": {
+      "address": 2,
+      "name": "ADD",
+      "description": "First Byte to add reg"
+    },
+    "3": {
+      "address": 3,
+      "name": "SBT",
+      "description": "First bute to suibtract reg"
+    },
+    "4": {
+      "address": 4,
+      "name": "MUL",
+      "description": "First Byte to multiplication Reg"
+    },
+    "5": {
+      "address": 5,
+      "name": "DIV",
+      "description": "X"
+    },
+    "6": {
+      "address": 6,
+      "name": "SR",
+      "description": "X"
+    },
+    "7": {
+      "address": 7,
+      "name": "SL",
+      "description": "X"
+    },
+    "8": {
+      "address": 8,
+      "name": "AND",
+      "description": "X"
+    },
+    "9": {
+      "address": 9,
+      "name": "OR",
+      "description": "X"
+    },
+    "10": {
+      "address": 10,
+      "name": "XOR",
+      "description": "X"
+    }
+  },
+  "read_addresses": {
+    "1": {
+      "address": 1,
+      "name": "ALU",
+      "description": "Read ALU Buffer"
+    },
+    "2": {
+      "address": 2,
+      "name": "RAM",
+      "description": "Read From ram"
+    },
+    "3": {
+      "address": 3,
+      "name": "R1",
+      "description": "Read Value in R1"
+    },
+    "4": {
+      "address": 4,
+      "name": "R2",
+      "description": "X"
+    },
+    "5": {
+      "address": 5,
+      "name": "R3",
+      "description": "X"
+    },
+    "6": {
+      "address": 6,
+      "name": "R4",
+      "description": "X"
+    },
+    "7": {
+      "address": 7,
+      "name": "PRTA",
+      "description": "X"
+    },
+    "8": {
+      "address": 8,
+      "name": "PRTB",
+      "description": "X"
+    },
+    "9": {
+      "address": 9,
+      "name": "R5",
+      "description": "X"
+    },
+    "10": {
+      "address": 10,
+      "name": "R6",
+      "description": "X"
+    }
+  },
+  "instructions": {
+    "1": {
+      "address": 1,
+      "name": "RETI",
+      "length": 1,
+      "leading_nops": 1,
+      "format": "INS",
+      "description": "Return point for interrupts"
+    },
+    "16": {
+      "address": 16,
+      "name": "JMPF",
+      "length": 2,
+      "leading_nops": 1,
+      "format": "INS_NUM",
+      "description": "Jump forward an offset"
+    },
+    "17": {
+      "address": 17,
+      "name": "JMPB",
+      "length": 2,
+      "leading_nops": 1,
+      "format": "INS_NUM",
+      "description": "Jump backwards an offset"
+    },
+    "18": {
+      "address": 18,
+      "name": "MOVX",
+      "length": 2,
+      "leading_nops": 2,
+      "format": "INS_WRT",
+      "description": "DPTR address to Reg"
+    },
+    "19": {
+      "address": 19,
+      "name": "SETB",
+      "length": 2,
+      "leading_nops": 0,
+      "format": "INS_WRT",
+      "description": "SetB to 1"
+    },
+    "20": {
+      "address": 20,
+      "name": "CLRB",
+      "length": 2,
+      "leading_nops": 0,
+      "format": "INS_WRT",
+      "description": "Clear Bit"
+    },
+    "22": {
+      "address": 22,
+      "name": "JZ",
+      "length": 2,
+      "leading_nops": 1,
+      "format": "INS_NUM",
+      "description": "if zero offset"
+    },
+    "23": {
+      "address": 23,
+      "name": "JN",
+      "length": 2,
+      "leading_nops": 1,
+      "format": "INS_NUM",
+      "description": "if negative offset"
+    },
+    "24": {
+      "address": 24,
+      "name": "JL",
+      "length": 2,
+      "leading_nops": 1,
+      "format": "INS_NUM",
+      "description": "if A>B offset"
+    },
+    "25": {
+      "address": 25,
+      "name": "JC",
+      "length": 2,
+      "leading_nops": 1,
+      "format": "INS_NUM",
+      "description": "if Carry =1 offset"
+    }
+  }
+}

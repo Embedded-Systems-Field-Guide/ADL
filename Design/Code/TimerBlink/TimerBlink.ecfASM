@@ -1,0 +1,30 @@
+ORG 0:
+//Should (?) cerate 10hz output on LED => 20Hz flag 50% duty cycle
+
+//Setup ouput
+MOVD TRISB 255
+
+//Setup T4
+MOVD T4_REG 250
+MOVD T4_PS 239
+MOVD TCON34 15
+
+PollTH:
+SETB INC_DPTR
+CJNZ SetBit T4_F //If FLag 1 go to setbit
+JMPA PollTH
+
+SetBit:
+CLRB T4F
+SETB LATB_1
+
+PollTL:
+CJNZ ClearBit T4_F //If FLag 1 go to clear bit
+JMPA PollTL
+
+ClearBit: 
+CLRB T4F
+CLRB LATB_1
+
+//GO back to waiting for flag
+JMPA PollTH

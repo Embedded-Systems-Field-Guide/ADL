@@ -1,0 +1,21 @@
+1	RETI	1	1	INS	Return point for interrupts
+16	JMPF	2	1	INS_NUM	Jump forward an offset
+17	JMPB	2	1	INS_NUM	Jump backwards an offset
+18	MOVX	2	2	INS_WRT	DPTR address to Reg
+19	SETB	2	0	INS_WRT	SetB to 1
+20	CLRB	2	0	INS_WRT	Clear Bit
+22	JZ	2	1	INS_NUM	if zero offset
+23	JN	2	1	INS_NUM	if negative offset
+24	JL	2	1	INS_NUM	if A>B offset
+25	JC	2	1	INS_NUM	if Carry =1 offset
+26	JE	2	1	INS_NUM	if A=B offset
+32	JMPA	3	1	INS_16ADD	Jmp to 16B address
+33	MOV	3	0	INS_WRT_READ	MOV from reg to reg
+34	MOVR	3	2	INS_WRT_NUM	MOV from rom to address (8 bit drom address)
+35	MOVD	3	0	INS_WRT_NUM	MOV data to reg
+37	AJZ	3	1	INS_16ADD	Jump to address if zero
+38	AJN	3	1	INS_16ADD	Jump to address if Negative
+39	AJL	3	1	INS_16ADD	Jump to address if A>B
+40	AJC	3	1	INS_16ADD	Jump to address if Carry=1
+41	AJE	3	1	INS_16ADD	Jump to address if A=B
+48	CJNZ	3	1	INS_NUM_READ	Jump offset if read bit = 0

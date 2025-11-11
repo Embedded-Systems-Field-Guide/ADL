@@ -1,0 +1,6 @@
+ProjectName=HelloWorld
+SourceDir=src
+BuildDir=build
+Output=output.bin
+Target=FPGA
+Version=1.0

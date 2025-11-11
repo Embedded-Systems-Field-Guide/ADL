@@ -1,0 +1,20 @@
+ORG 0:
+MOVD TRISB 255
+Main:
+CLRB IR1
+SETB LATB_1
+DelayHigh:
+SETB INC_IR1
+CJNZ BackToHighDelay IR1
+JMPA SetLow
+BackToHighDelay:
+JMPB DelayHigh
+SetLow:
+CLRB LATB_1
+CLRB IR1
+DelayLow:
+SETB INC_IR1
+CJNZ BackToLowDelay IR1
+JMPA Main
+BackToLowDelay:
+JMPB DelayLow

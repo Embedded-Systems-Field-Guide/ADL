@@ -1,0 +1,71 @@
+ORG 0:
+JMPA MAIN
+
+ORG 4: //Excludive dfor serial interrupt
+JMPA UART_ISR
+
+ORG 30: //31st address
+
+MAIN: 
+    //Timer 1
+    MOVD T1_TH 50
+    MOVD T1_TL 25
+    MOVD T1_PS 0b0101
+    MOVD TCON12 0xF0
+
+    //Serial Port
+    MOVD UART1_BR 1
+    MOVD UART1_PS 1  
+    MOVD COM_CON 0xFF
+    MOVD UART1_TXBUF 147
+    SETB UART1_SEND
+
+    //Write to Port
+    MOVD TRISA 255
+    MOVD LATA 255
+
+LOOP:
+    CJNZ UART_ISR RXF 
+    JMPB LOOP
+
+UART_ISR:
+    //Clear flag
+    CLRB RXF
+
+    CLRB RST    //Set ort clr doest matter only address of RST 
+
+    // Subtarcts Char "0" from Byte
+    MOV SBT UART1_RXBUF 
+    MOVD CALC 0x30
+    //Stores in R1 for safekeeping
+    MOV R1 ALU
+    
+    CLRB RST
+
+    // Adds 9 to get flags
+    MOV ADD R1 //Addiotn not important we want A>B flag
+    MOVD CALC 9
+
+    //If Larger than flag is raised ends ISR 
+    AJL LOOP
+
+    CLRB RST
+    MOV ADD R1
+    MOVD CALC B@7Seg    //Lower byte of address
+
+    MOVD DPTR_A T@7Seg   //Will be 0 (Just for the priciple move top part oaf address)
+    MOV DPTR_B ALU      // Lower + Recived number
+
+    //No need to check for overflow, program is verry short 
+
+
+
+    MOVX LATA          //From DPTR address to Port
+
+    JMPA LOOP
+
+
+7Seg:
+    DB 0 36 186 182 116 230 94 164 254 244
+
+
