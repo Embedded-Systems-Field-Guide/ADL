@@ -1,0 +1,292 @@
+{
+  "path": "Offline/FYP_Programmer",
+  "foldername": "FYP_Programmer",
+  "name": "FYP_Programmer",
+  "title": "FYP_Programmer",
+  "uuid": "00995c62107671ec907058fc568c857f",
+  "created_at": "2025-09-17 01:30:11",
+  "updated_at": "2025-09-26 00:07:36",
+  "documents": [
+    {
+      "uuid": "d8871a82a703dad068861a49a39c97f7",
+      "title": "Programmer",
+      "docType": 1,
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1758837139,
+      "createTime": 1752139331,
+      "histories": [],
+      "created_at": "2025-07-10 11:22:11",
+      "updated_at": "2025-09-25 23:52:19",
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          10,
+          "C0603",
+          "C1,C2,C3,C5,C9,C10,C11,C31,C35,C36",
+          {
+            "Manufacturer Part": "CC0603KRX7R9BB104",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C14663"
+          }
+        ],
+        [
+          "10nF",
+          4,
+          "C0603",
+          "C4,C6,C7,C8",
+          {
+            "Manufacturer Part": "0603B103K500NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C57112"
+          }
+        ],
+        [
+          "1uF",
+          4,
+          "C0603",
+          "C26,C27,C28,C29",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "SAMSUNG(三星)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C15849"
+          }
+        ],
+        [
+          "10pF",
+          2,
+          "C0402",
+          "C32,C33",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "muRata(村田)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C85874"
+          }
+        ],
+        [
+          "4.7uF",
+          1,
+          "C0603",
+          "C34",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "muRata(村田)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C77045"
+          }
+        ],
+        [
+          "18pF",
+          2,
+          "C0603",
+          "C37,C38",
+          {
+            "Manufacturer Part": "AC0603JRNPO0BN220",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2176438"
+          }
+        ],
+        [
+          "CH340G",
+          1,
+          "SOIC-16_L9.9-W3.9-P1.27-LS6.0-BL",
+          "CH1G",
+          {
+            "Manufacturer Part": "CH340G",
+            "Manufacturer": "WCH(南京沁恒)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C14267"
+          }
+        ],
+        [
+          "ESD1",
+          1,
+          "SOT-143_L2.9-W1.3-P1.92-LS2.3-BR",
+          "ESD",
+          {
+            "Manufacturer Part": "TPPRTR5V0U2X",
+            "Manufacturer": "TECH PUBLIC(台舟)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C558444"
+          }
+        ],
+        [
+          "120Ω",
+          1,
+          "L0603",
+          "FB1",
+          {
+            "Manufacturer Part": "GZ1608D121TF",
+            "Manufacturer": "Sunlord(顺络)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C12391"
+          }
+        ],
+        [
+          "LED_RED",
+          1,
+          "LED0805-RD_RED",
+          "PWR_LED",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "国星光电",
+            "Supplier": "LCSC",
+            "Supplier Part": "C84256"
+          }
+        ],
+        [
+          "1kΩ",
+          3,
+          "R0603",
+          "R1,R45,R46",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ],
+        [
+          "5.1kΩ",
+          2,
+          "R0603",
+          "R47,R48",
+          {
+            "Manufacturer Part": "CQ03WAJ0512T5E",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C473622"
+          }
+        ],
+        [
+          "TS-1187A-B-A-B",
+          2,
+          "SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5",
+          "SW1,SW9",
+          {
+            "Manufacturer Part": "TS-1187A-B-A-B",
+            "Manufacturer": "XKB Connection(中国星坤)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C318884"
+          }
+        ],
+        [
+          "黄色排针A_HEADER3",
+          2,
+          "HDR-TH_3P-P2.54-V-M-1",
+          "U1,U2",
+          {
+            "Manufacturer Part": "黄色排针A_HEADER3",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900019266"
+          }
+        ],
+        [
+          "STM32F411RET6",
+          1,
+          "LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL",
+          "U7",
+          {
+            "Manufacturer Part": "STM32F411RET6",
+            "Manufacturer": "ST(意法半导体)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C94355"
+          }
+        ],
+        [
+          "USB-TYPE-C-018",
+          1,
+          "USB-C_SMD-TYPE-C-31-M-12",
+          "USB_C",
+          {
+            "Manufacturer Part": "USB-TYPE-C-018",
+            "Manufacturer": "DEALON(德艺隆)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2927038"
+          }
+        ],
+        [
+          "AMS1117-3.3V",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR",
+          "V_REG",
+          {
+            "Manufacturer Part": "AMS1117-3.3V",
+            "Manufacturer": "MSKSEMI(美森科)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5120796"
+          }
+        ],
+        [
+          "25MHz",
+          1,
+          "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+          "X1",
+          {
+            "Manufacturer Part": "X322525MMB4SI",
+            "Manufacturer": "YXC(扬兴晶振)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C70582"
+          }
+        ],
+        [
+          "12MHz",
+          1,
+          "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+          "X2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "HD(浩都频率)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C654951"
+          }
+        ]
+      ],
+      "components": {
+        "07aad3aef5fe462ea6daff7c9a797ff9": 1,
+        "4c48a7fc7c3af3dc5b33344717675b6e": 1,
+        "dd1bd0a9f0b849aeb788b05bdd214157": 1,
+        "6b9ddc1f70ab486f84f254517de5e0ce": 1,
+        "c7967c7564d1726f18ef36f4c32fe4b0": 1,
+        "a4eb121a403847a88802419747e168f5": 1,
+        "98e4c3ef54f24d098223fe84e1e1cb84": 1,
+        "6120522a8db139790c57da44f34e914a": 1,
+        "8b1215fd076d486cae8ed286d4d6835b": 2,
+        "35b4f592778d44209547b9c36205a0a7": 2,
+        "b41a897ee33d477892b8cf530e98bb10": 1,
+        "e489989dba324384bd5c883839937779": 1,
+        "637415f70eb949abfaeba2abe658ee9b": 4,
+        "2fd8e821d1d54bc5b8a3fa6192db666e": 2,
+        "45aa9db41fe55f139f756074a7ef37a0": 1,
+        "2451f79b45934de0bf98b713e679f6cc": 1,
+        "597701dbde98d3183fe5df5fb870ec57": 2,
+        "47c6346c8ef847931af1f6f1d55308cf": 2,
+        "7d9b40ab5d8d48b2ae2c95a8af57a896": 2,
+        "412d98950cf84a63bd0cb3d4569d2217": 3,
+        "93ebcd6080ba26a913b1eeabcd603876": 4,
+        "969ae6d17e6d4be9b06b16ed2daf7c48": 1,
+        "154b66255b01a09bf1c88bb1ea89be78": 7,
+        "584d673271dd43738fb1ad2dd2772015": 2
+      },
+      "description": ""
+    }
+  ],
+  "content": "",
+  "stick": "",
+  "sort": [],
+  "schfilename": "FYP_Programmer.json",
+  "schfilemtime": 1758837139454
+}

@@ -1,0 +1,419 @@
+{
+  "uuid": "e7d5c7a4ee4de7d97dc66243a2412469",
+  "path": "Offline/FYP_DevBoard",
+  "name": "FYP_DevBoard",
+  "content": "",
+  "created_at": "2025-08-17 18:07:59",
+  "updated_at": "2025-10-10 09:32:25",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "6bfbe2ae90926a5f20f1e5b22efd73b4",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "597701dbde98d3183fe5df5fb870ec57": 20,
+        "e489989dba324384bd5c883839937779": 1,
+        "6120522a8db139790c57da44f34e914a": 1,
+        "98e4c3ef54f24d098223fe84e1e1cb84": 1,
+        "a4eb121a403847a88802419747e168f5": 1,
+        "dd1bd0a9f0b849aeb788b05bdd214157": 1,
+        "637415f70eb949abfaeba2abe658ee9b": 2,
+        "2ac9d3f7003e4434b98a9b9a22af3d11": 1,
+        "7426e17fcafb493991fbb30034744841": 2,
+        "e1e25f8f178c43dea5e78ad1471105ab": 10,
+        "6be69e8ce7a44e9ebfb04b7ff461d0da": 1,
+        "2d94fca27ceb48758b45df1f676fafb4": 1,
+        "050210eb44fb24b0f1f7d73e6372031b": 9,
+        "f6edace03989493383954588ef33712f": 1,
+        "ff6e3a4610564778b889e3e2efd18e76": 2,
+        "bc9a6227f3bcf47e7aef0cdf0df60e2a": 2,
+        "1c256e0c1a8442fca6ff544f249ee5de": 6,
+        "21f8f80a3f7c3c2b00b33f71a31ff6ef": 3,
+        "7d9b40ab5d8d48b2ae2c95a8af57a896": 1,
+        "5a992ce9f0b748e6aace6a060c65006a": 1,
+        "ab6bdd8ef86b4d8b8a8a00b6a5ea8feb": 1,
+        "ad2ff3d5bb6447c1995c45988462ddb8": 1,
+        "77d44a4d217d0e61bbba7ea503d814a3": 1,
+        "93ebcd6080ba26a913b1eeabcd603876": 11,
+        "154b66255b01a09bf1c88bb1ea89be78": 10,
+        "2d7a2c802fbea0dcbc0b82d37888e1d9": 2,
+        "25eef13595154cf911d80acfae99db0d": 2,
+        "3a7619f08f434ef2aef5b3200c014bc5": 2,
+        "584d673271dd43738fb1ad2dd2772015": 10,
+        "faac4ade3bc4e3dd5ad2239bdc7375c1": 2,
+        "0162c93b05c079a4f063ffb73f50c063": 8,
+        "c34bbdcdd263b720e64d05b3f617b059": 12,
+        "3553af05f3c64cda8b3f7de0615d5a5d": 1,
+        "969ae6d17e6d4be9b06b16ed2daf7c48": 1,
+        "98d2d502575c4768ba723ef9a9aae0ec": 1,
+        "daf8bc7824a44b7b9698685af106bd6e": 1,
+        "ba6cd657fd1716c4477aac898adb9ef9": 1,
+        "f43cdebf8b8b4fd3b7cd39bf21f8291b": 1,
+        "51054011ec1a46cf950cf94b5dac8dea": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 25,
+        "0d6038ba614f470fb673928983ad98aa": 3,
+        "c7ed5dfb34e60282f43c82c386dd894d": 3,
+        "c185d09533234f22a2b010c222615846": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "AMS1117-3.3V",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR",
+          "3.3V_REG1",
+          {
+            "Manufacturer Part": "AMS1117-3.3V",
+            "Manufacturer": "MSKSEMI(美森科)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5120796"
+          }
+        ],
+        [
+          "10uF",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "SAMSUNG(三星)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C15849"
+          }
+        ],
+        [
+          "10nF",
+          11,
+          "C0603",
+          "C3,C5,C16,C17,C18,C19,C20,C21,C22,C23,C24",
+          {
+            "Manufacturer Part": "0603B103K500NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C57112"
+          }
+        ],
+        [
+          "100nF",
+          10,
+          "C0603",
+          "C4,C6,C7,C8,C9,C10,C13,C14,C15,C26",
+          {
+            "Manufacturer Part": "CC0603KRX7R9BB104",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C14663"
+          }
+        ],
+        [
+          "18pF",
+          2,
+          "C0603",
+          "C11,C12",
+          {
+            "Manufacturer Part": "CL10C180JB8NNNC",
+            "Manufacturer": "SAMSUNG(三星)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C1647"
+          }
+        ],
+        [
+          "100uF",
+          1,
+          "CASE-B_3528",
+          "C25",
+          {
+            "Manufacturer Part": "TAJB107K006RNJ",
+            "Manufacturer": "Kyocera AVX",
+            "Supplier": "LCSC",
+            "Supplier Part": "C16133"
+          }
+        ],
+        [
+          "CH340G",
+          1,
+          "SOIC-16_L9.9-W3.9-P1.27-LS6.0-BL",
+          "CH1G",
+          {
+            "Manufacturer Part": "CH340G",
+            "Manufacturer": "WCH(南京沁恒)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C14267"
+          }
+        ],
+        [
+          "PESD5V0S1UL,315",
+          1,
+          "SOD-882_L1.0-W0.6-RD",
+          "D2",
+          {
+            "Manufacturer Part": "PESD5V0S1UL,315",
+            "Manufacturer": "Nexperia(安世)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C85402"
+          }
+        ],
+        [
+          "ESD1",
+          1,
+          "SOT-143_L2.9-W1.3-P1.92-LS2.3-BR",
+          "ESD1",
+          {
+            "Manufacturer Part": "TPPRTR5V0U2X",
+            "Manufacturer": "TECH PUBLIC(台舟)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C558444"
+          }
+        ],
+        [
+          "whiteLEDSMD",
+          12,
+          "LED0805-R-RD",
+          "LED1,LED2,LED3,LED4,LED5,LED6,LED7,LED8,LED11,LED12,LED13,LED14",
+          {
+            "Manufacturer Part": "KT-0805W",
+            "Manufacturer": "KENTO",
+            "Supplier": "LCSC",
+            "Supplier Part": "C34499"
+          }
+        ],
+        [
+          "TS-1187A-B-A-B",
+          10,
+          "SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5",
+          "MCLR,SW1,SW2,SW3,SW4,SW5,SW6,SW7,SW8,USR_BTN",
+          {
+            "Manufacturer Part": "TS-1187A-B-A-B",
+            "Manufacturer": "XKB Connection(中国星坤)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C318884"
+          }
+        ],
+        [
+          "10kΩ",
+          25,
+          "R0603",
+          "R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R24,R31,R32,R45,R46,R57,R58,R59,R61",
+          {
+            "Manufacturer Part": "0603WAF1002T5E",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C25804"
+          }
+        ],
+        [
+          "1kΩ",
+          28,
+          "R0402",
+          "R17,R18,R19,R20,R21,R22,R23,R33,R34,R35,R36,R38,R39,R40,R41,R42,R43,R44,R47,R48,R49,R50,R51,R52,R53,R54,R55,R56",
+          {
+            "Manufacturer Part": "0402WGF1001TCE",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C11702"
+          }
+        ],
+        [
+          "220Ω",
+          2,
+          "R0603",
+          "R26,R27",
+          {
+            "Manufacturer Part": "0603WAF2200T5E",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C22962"
+          }
+        ],
+        [
+          "5.1kΩ",
+          2,
+          "R0603",
+          "R28,R37",
+          {
+            "Manufacturer Part": "0603WAF5101T5E",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C23186"
+          }
+        ],
+        [
+          "4.7kΩ",
+          2,
+          "R0402",
+          "R29,R30",
+          {
+            "Manufacturer Part": "0402WGF4701TCE",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C25900"
+          }
+        ],
+        [
+          "PMEG3050EP-QX",
+          1,
+          "SOD-128_L3.7-W2.5-LS4.7-RD",
+          "U5",
+          {
+            "Manufacturer Part": "PMEG3050EP-QX",
+            "Manufacturer": "Nexperia(安世)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5311573"
+          }
+        ],
+        [
+          "SN74LVC8T245PWR",
+          3,
+          "TSSOP-24_L7.8-W4.4-P0.65-LS6.4-BL",
+          "U8,U10,U12",
+          {
+            "Manufacturer Part": "SN74LVC8T245PWR",
+            "Manufacturer": "TI(德州仪器)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27643"
+          }
+        ],
+        [
+          "1812L110/24DR",
+          1,
+          "R1812",
+          "U13",
+          {
+            "Manufacturer Part": "1812L110/24DR",
+            "Manufacturer": "Littelfuse(美国力特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C207066"
+          }
+        ],
+        [
+          "USB-TYPE-C-018",
+          1,
+          "USB-C_SMD-TYPE-C-31-M-12",
+          "USB_C1",
+          {
+            "Manufacturer Part": "USB-TYPE-C-018",
+            "Manufacturer": "DEALON(德艺隆)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2927038"
+          }
+        ],
+        [
+          "12MHz",
+          1,
+          "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+          "X2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "HD(浩都频率)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C654951"
+          }
+        ]
+      ],
+      "updateTime": 1760074378,
+      "createTime": 1755446880,
+      "histories": [],
+      "created_at": "2025-08-17 18:08:00",
+      "updated_at": "2025-10-10 07:32:58"
+    },
+    {
+      "uuid": "3c2170bf74dfce2d86ec650caa5346f9",
+      "puuid": "e7d5c7a4ee4de7d97dc66243a2412469",
+      "title": "ECF8F24",
+      "filename": "ECF8F24.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "420b94b2015e4091acfc9eb09ff0b503": 1,
+        "82605a93a0be4c79a27d82f67f2aca29": 12,
+        "a109bca3cac54607a3ba339292451616": 3,
+        "b23a3cd50ffb4bd580712ba1d52d77dd": 3,
+        "398691f1f785460098bbe5ee6590333c": 49,
+        "f8151fdc728a41ebbc304e11d39e5437": 25,
+        "dc66adba5c2f4c7eaf9fa4efb22281b6": 1,
+        "5b5b16d7faee41f894243f3dab7ab98e": 10,
+        "b338f4e1aa7041e3a361f71ee1d07c0e": 1,
+        "7e70b923819e4f3bb9fdeaf4abdca9d3": 2,
+        "efc241d4bee24cd8bd20a3101b11163a": 1,
+        "4b9e423a569449a2b51949a532ae73f7": 1,
+        "70f9562f41344bbcb8451c5b4acb144b": 1,
+        "89243c15a2974ba08305eced8ca2c9d4": 1,
+        "e6246c84ed2d4de3a763d8e8ac37b319": 1,
+        "bcc58561d22445c2b08855ecf0dba7c7": 1,
+        "9e297fbdb6c24ee39419d7ac96617dbf": 1,
+        "5cafa9ae5a9e4b2ab529c9f08b47eb94": 2,
+        "56ec1972802b4c798eaaa6de9475b687": 1,
+        "14f3bab6af9442ebb45309d623598ac3": 2,
+        "fafd024f554e426eb74cf4a204aa88b0": 10,
+        "b86f8b620e434c2aa318edddbe039255": 2,
+        "29f206f3996f42e5b36e68a5d6c5a2fc": 1,
+        "e817426771544657b9ee14fef1b17b12": 2,
+        "f8ac634cb077487bac19967b30104c62": 10,
+        "c214f06617274a5f8dbb64087e7de125": 1,
+        "3036750d1d0a4e9fa4035186551a7693": 9,
+        "4937126739894c52921de221c4760bbc": 1,
+        "d05ce2b628c44ca5af174d6477769f8a": 1,
+        "806a55eb4d3c40ab838f70f86785d85e": 1,
+        "4ab60f70fd46418e826d2d8aa4f1300a": 6,
+        "a3c9ca1bb3964bb89db20ab2ce8ca5d1": 1,
+        "1559afa020af4c2f93acc10da54bfc6b": 2,
+        "390e44ca607b4bc4970ba64d9acc543b": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "Digilent CMod A7-35T",
+          1,
+          "DIGILENT CMOD A7-35T",
+          "U1",
+          {
+            "Manufacturer Part": "410-328-35",
+            "Manufacturer": "Digilent Inc.",
+            "Supplier": "Digi-Key",
+            "Supplier Part": "1286-1130-ND"
+          }
+        ],
+        [
+          "DS1026-01-1X24S8BV",
+          1,
+          "HDR-TH_24P-P2.00-V-F-1",
+          "U2",
+          {
+            "Manufacturer Part": "DS1026-01-1x24S8BV",
+            "Manufacturer": "CONNFLY",
+            "Supplier": "LCSC",
+            "Supplier Part": "C19273157"
+          }
+        ]
+      ],
+      "updateTime": 1760081545,
+      "createTime": 1755447354,
+      "histories": [],
+      "created_at": "2025-08-17 18:15:54",
+      "updated_at": "2025-10-10 09:32:25"
+    }
+  ],
+  "sort": [],
+  "title": "FYP_DevBoard",
+  "foldername": "FYP_DevBoard",
+  "schfilename": "FYP_DevBoard.json",
+  "schfilemtime": 1760074378768
+}
