@@ -284,11 +284,11 @@ module AddressableRegion(
         .out(COMSWriteSelected)    
     );   
     
-    wire BR = COMSWriteSelected[0];
-    wire BRPS = COMSWriteSelected[1];
-    wire CLR = COMSWriteSelected[2];
-    wire TxBuf = COMSWriteSelected[3];
-    wire Send = COMSWriteSelected[4];
+    wire UART1_BR = COMSWriteSelected[0];
+    wire UART1_BRPS = COMSWriteSelected[1];
+    wire UART1_CLR = COMSWriteSelected[2];
+    wire UART1_TxBuf = COMSWriteSelected[3];
+    wire UART1_Send = COMSWriteSelected[4];
     
     
         //=============================================
@@ -391,65 +391,77 @@ module AddressableRegion(
     //Timers 
     //=============================================
     
-
+   
+   wire [7:0] TCON12Reg;
+    Register8bit TCON12_Register (
+        .D(DataBus),
+        .CLK(SYSCLK),
+        .STR(TCON12),
+        .RST(MCLR),
+        .Q(TCON12Reg),
+        .Qn()
+    );
     
-    wire [3:0] T12CONLower;
-     PWMTCONTCON Tim1(
-        // System signals
-        .SYSCLK(SYSCLK),          // System clock
-        .MCLR(MCLR),            // Master clear
+    
+     PWMModule Tim1(
+        //System inputs
+        .SYSCLK(SYSCLK),       
+        .MCLR(MCLR),         
         .CLK_IN(CLK_IN),
-        
-        // Data bus
-        .DataBus(DataBus),   // 8-bit data input bus
-        
-        // Control inputs
-        .StoreTCON(TCON12),       // Store TCON register
-        .StoreTH(T1_TH),         // Store TH register
-        .StoreTL(T1_TL),         // Store TL register
-        .StorePS(T1_PS),         // Store Prescaler register
-        .TF_CLR(T1_F),          // Timer flag clear
+        .DataBus(DataBus),   
+    
+        //Timer Setup
+        .StoreTH(T1_TH),        
+        .StoreTL(T1_TL),         
+        .StorePS(T1_PS),         
+        .TF_CLR(T1_F),          
         .CLR(T1_CLR),
+        .TCONBits(TCON12Reg[7:4]), 
+        
         
         // Outputs
-        .TFlag(T1Flag),           // Timer flag output
-        .INTVector(T1_int),       // Interrupt vector output
-        .TChannel(TCA),        // Channel output
-        .TCONLower(T12CONLower), // Lower nibble of TCON for another timer
+        .TFlag(T1Flag),           
+        .INTVector(T1_int),       
+        .TChannel(TCA)        
+             
+    );
+    
+      PWMModule Tim2(
+        //System inputs
+        .SYSCLK(SYSCLK),       
+        .MCLR(MCLR),         
+        .CLK_IN(CLK_IN),
+        .DataBus(DataBus),   
+    
+        //Timer Setup
+        .StoreTH(T2_TH),        
+        .StoreTL(T2_TL),         
+        .StorePS(T2_PS),         
+        .TF_CLR(T2_F),          
+        .CLR(T2_CLR),
+        .TCONBits(TCON12Reg[3:0]), 
         
         
-        .TC(Tim1Counter),
-        .TC_PS(TC_PS)
+        // Outputs
+        .TFlag(T2Flag),           
+        .INTVector(T2_int),       
+        .TChannel(TCB)        
+             
     );
     
    
     
-    PWMTCONEXTCON Tim2 (
-        // System signals
-        .SYSCLK(SYSCLK),          // System clock
-        .MCLR(MCLR),            // Master clear
-        .CLK_IN(CLK_IN),
-        
-        // Data bus
-        .DataBus(DataBus),   // 8-bit data input bus
-        
-        // Control inputs
-        .StoreTH(T2_TH),         // Store TH register
-        .StoreTL(T2_TL),         // Store TL register
-        .StorePS(T2_PS),         // Store Prescaler register
-        .TF_CLR(T2_F),          // Timer flag clear
-        .CLR(T2_CLR),
-        
-        // Outputs
-        .TFlag(T2Flag),           // Timer flag output
-        .INTVector(T2_int),       // Interrupt vector output
-        .TChannel(TCB),        // Channel output
-        .TCONLower(T12CONLower) // Lower nibble of TCON for another timer
+   wire [7:0] TCON34Reg;
+    Register8bit TCON34_Register (
+        .D(DataBus),
+        .CLK(SYSCLK),
+        .STR(TCON34),
+        .RST(MCLR),
+        .Q(TCON34Reg),
+        .Qn()
     );
-    
-    wire [3:0] T34CONLower;
-    
-    Scale2TimerTCON Tim3 (
+       
+    Scale2Timer Tim3 (
 
         .SYSCLK(SYSCLK),          // System clock
         .MCLR(MCLR),            // Master clear
@@ -458,27 +470,26 @@ module AddressableRegion(
         // Data and control inputs
         .D(DataBus),   // 8-bit data input bus
         .StoreTreg(T3_REG),       // Store signal for TReg register
-        .StoreTCON(TCON34),       // Store signal for TCON register
         .StoreTPsA(T3_PSA),        // Store signal for prescaler register
         .StoreTPsB(T3_PSB),        // Store signal for prescaler register
         .CLR(T3_CLR),             // Clear signal
         .TF_CLR(T3_F),          // Timer flag clear
         
         // Timer outputs
+        // Timer outputs
         // Outputs
         .TFlag(T3Flag),           // Timer flag output
         .INTVector(T3_int),       // Interrupt vector output
-        .TCONLower(T34CONLower),
-        .CLK_NextA_dbg(Debuglines[0]),
-        .CLK_NextB_dbg(Debuglines[1])
+        .TCONBits(TCON34Reg[7:4]),
+        .CLK_NextA_dbg(),
+        .CLK_NextB_dbg()
     );
     
     
+     
     
     
-    
-    
-    Scale1TimerEXTCON T4 (
+    Scale1Timer Tim4 (
         // System signals
         .SYSCLK(SYSCLK),          // System clock
         .MCLR(MCLR),            // Master clear
@@ -494,7 +505,7 @@ module AddressableRegion(
         // Timer outputs
         .TFlag(T4Flag),           // Timer flag output
         .INTVector(T4_int),       // Interrupt vector output
-        .TCONLower(T34CONLower) // Lower nibble of TCON for another timer
+        .TCONBits(TCON34Reg[3:0]) // Lower nibble of TCON for another timer
         
     );
     
@@ -703,7 +714,7 @@ module AddressableRegion(
         
         uart_rx u_rx (
             .clk      (SYSCLK),
-            .reset_n  (reset_n),
+            .reset_n  (reset_n | UART1_CLR),
             .uart_rxd (Rx),   
             .RXBUF    (RxBufPass),
             .RxFlag   (RX_Flag),
@@ -715,24 +726,32 @@ module AddressableRegion(
             .Enable(RX_BUF), // Enable signal (active-high)
             .out(DataBus)     // Output bus (tri-state)
         );
-        
-        
-         Register8bit TxBuffer (
+             
+             
+    assign DataBusReversed = {
+        DataBus[0], DataBus[1], DataBus[2], DataBus[3],
+        DataBus[4], DataBus[5], DataBus[6], DataBus[7]
+    };
+
+            TxDriver uart_txDriver_inst (
             .D(DataBus),    // 8-bit data input bus
-            .CLK(CLK_IN),        // Clock input
-            .STR(TxBuf),        // Store enable
-            .RST(MCLR),        // Asynchronous reset
-            .Q(TxBufferVal)
-        );      
+            .clk(SYSCLK),
+            .reset_n(reset_n | UART1_CLR),
+            .StoreTxBuf(UART1_TxBuf & CLK_IN),
+            .uart_txd(Tx),
+            .idle_o(TX_Idle_Flag)
+        );
+
+
+
+
+        
     
-        uart_tx uart_tx_inst (
-        .clk(SYSCLK),
-        .reset_n(reset_n),
-        .trigger_i(Send & CLK_IN),
-        .uart_txd(Tx),
-        .ToSend(TxBufferVal),
-        .idle_o(TX_Idle_Flag)
-    );
+       
+
+        
+         
+    
    
    
         

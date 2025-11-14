@@ -162,6 +162,7 @@ module PWMCTRL (
         .Q(TFlag)
     );
     
+    
     assign INTVector = ENInterrupt & TFlag;
 
     wire PWMLatchn;

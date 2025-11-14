@@ -178,14 +178,11 @@ module ADDBusBuffer (
     input  wire [7:0] EnableBits,
     output wire [7:0] out
 );
-    // Per-bit tri-state control
-    genvar i;
-    generate
-        for (i = 0; i < 8; i = i + 1) begin : bit_buffer
-            assign out[i] = (Enable & EnableBits[i]) ? Bus[i] : 1'bZ;
-        end
-    endgenerate
+    assign out = (Enable)               ? Bus :
+                 (|EnableBits)          ? (Bus & EnableBits) :
+                                          8'bZ;
 endmodule
+
 
 module Enabler16 (
     input  wire [15:0] Bus,    

@@ -332,3 +332,88 @@ module TxCTRL(
     assign TXCLK = ( (CLK_IN & TXC_RST) | (TXINC & EN_BAUD));
 
 endmodule 
+
+
+module TxDriver (
+    input  wire [7:0] D,          // 8-bit data input bus
+    input  wire clk,              // System clock (12 MHz)
+    input  wire reset_n,          // Active-low reset
+    input  wire StoreTxBuf,       // Store/send trigger (pulse on rising edge)
+    output reg  uart_txd,         // UART TX line (idle = '1')
+    output wire idle_o            // High when idle, low when transmitting
+);
+
+    // Baud rate generator for 9600 baud @ 12 MHz
+    localparam CLK_PER_BIT = 1250;
+    localparam BIT_CNT_W   = $clog2(CLK_PER_BIT);
+    
+    reg [BIT_CNT_W-1:0] baud_cnt;
+    reg                 baud_tick;
+    
+    // Generate baud tick (9600 Hz pulse)
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            baud_cnt  <= 0;
+            baud_tick <= 0;
+        end else begin
+            if (baud_cnt == CLK_PER_BIT-1) begin
+                baud_cnt  <= 0;
+                baud_tick <= 1;
+            end else begin
+                baud_cnt  <= baud_cnt + 1;
+                baud_tick <= 0;
+            end
+        end
+    end
+    
+    // 11-bit shift register: [10]=buffer, [9]=buffer, [8]=start, [7:0]=data, stop bit shifts in as '1'
+    // Format: 11_0_D[7:0]_1 when loaded
+    // As it shifts right, eventually becomes: 11111111111 (all idle)
+    reg [10:0] shift_reg;
+    reg        transmitting;
+    
+    assign idle_o = ~transmitting;
+    
+    // Edge detection for StoreTxBuf
+    reg store_prev;
+    wire store_edge = StoreTxBuf & ~store_prev;
+    
+    // add:
+    reg [3:0] bits_left;
+
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            shift_reg <= 11'b11111111111; // All 1s (idle state)
+            transmitting <= 0;
+            uart_txd <= 1'b1;
+            store_prev <= 0;
+            bits_left <= 0;
+        end else begin
+            store_prev <= StoreTxBuf;
+
+            // Load new frame on rising edge of StoreTxBuf when idle
+            if (store_edge && !transmitting) begin
+                // Correct load: LSB = start bit (0), then data LSB..MSB, then stop/idle '1's
+                shift_reg <= {2'b11, D, 1'b0}; // 11 bits: [10]=1,[9]=1,[8]=D7,...,[1]=D0,[0]=0
+                transmitting <= 1;
+                bits_left <= 11;
+                uart_txd <= 1'b1; // keep idle until first baud tick
+            end
+            // Shift out data on baud tick
+            else if (transmitting && baud_tick) begin
+                uart_txd <= shift_reg[0]; // Output LSB (start first)
+                shift_reg <= {1'b1, shift_reg[10:1]}; // Shift right, fill with '1' (stop/idle)
+                bits_left <= bits_left - 1;
+                if (bits_left == 1) begin
+                    transmitting <= 0; // we've just sent the last bit
+                end
+            end
+            else if (!transmitting) begin
+                uart_txd <= shift_reg[0]; // Continuously output '1' when idle
+            end
+        end
+    end
+
+
+
+endmodule

@@ -1,8 +1,12 @@
+
+
 ## This file is a general .xdc for the CmodA7 rev. B
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
-
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+   set_property CONFIG_MODE SPIx4 [current_design]
+   set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
 
 # Clock signal 12 MHz
 set_property -dict { PACKAGE_PIN L17   IOSTANDARD LVCMOS33 } [get_ports { sysclk }]; #IO_L12P_T1_MRCC_14 Sch=gclk

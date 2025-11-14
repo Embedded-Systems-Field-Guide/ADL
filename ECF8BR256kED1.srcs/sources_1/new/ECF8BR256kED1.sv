@@ -1,5 +1,4 @@
 (* keep_hierarchy = "yes", dont_touch = "true" *)
-
 module ECF8F24(
     input  wire sysclk,    // 12 MHz system clock
     output wire uart_rxd_out,
@@ -20,9 +19,9 @@ module ECF8F24(
     inout  wire PRTA3,     
     inout  wire PRTA4,    
     inout  wire PRTA5,     
-    inout wire PRTA6,     
-    inout wire PRTA7,     
-    inout wire PRTA8,    
+    inout  wire PRTA6,     
+    inout  wire PRTA7,     
+    inout  wire PRTA8,    
     inout  wire PRTB1,     
     inout  wire PRTB2,     
     inout  wire PRTB3,     
@@ -115,14 +114,6 @@ module ECF8F24(
     );
 
     
-//    assign PRTA8 = CLK8;
-//    assign PRTA7 = CLK7;
-//    assign PRTA6 = CLK6;
-//    assign PRTA5 = CLK5;
-//    assign PRTA4 = CLK4;
-//    assign PRTA3 = CLK3;
-//    assign PRTA2 = CLK2;
-//    assign PRTA1 = USR_Flag;
 
 
     
@@ -262,7 +253,7 @@ module ECF8F24(
     
     
     //GPIO
-//    .PORTA(PRTA),
+    .PORTA(PRTA),
     .PORTB(PRTB),
     .TCA(TCA),
     .TCB(TCB),
@@ -281,12 +272,7 @@ module ECF8F24(
     
     );
    
-    
-    assign PRTA1 = Debuglines[0];
-    assign PRTA2 = Debuglines[1];
-    assign PRTA3 = Debuglines[2];
-    assign PRTA4 = Debuglines[3];
-    assign PRTA5 = Debuglines[4];
+   
     
   
     
